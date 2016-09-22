@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //FBSDKAppEvents.activateApp()
+        
+        if(FBSDKAccessToken.current() == nil) {
+            print("not login \n \n \n")
+        } else {
+            print("login \n \n \n")
+        }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
