@@ -29,6 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
+        /*
+         1. Deselect initial view controller checkmark in storyboard
+         2. Create a new window with the size of the current window and set it as our main window
+         3. Instantiate a storyboard that we can use to create our new initial view controller
+         4. Instantiate our new initial view controller based on it's Storyboard ID
+         5. Set our new window's root view controller as our the new controller we just initiated
+         6. Make our new window visible
+ */
         return true
     }
 
