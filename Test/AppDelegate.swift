@@ -16,8 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        if UserDefaults.standard.isFirstLaunched() {
+            window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "OnboardingPage") as! OnboardingPage
+        } else {
+            window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "TabViewController1") as! TabViewController1
+        }
+        
+        self.window?.makeKeyAndVisible()
+        
+        return true
     }
 
     private func application(application: UIApplication, openURL url: URL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
