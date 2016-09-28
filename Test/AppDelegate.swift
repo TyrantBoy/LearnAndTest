@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         if UserDefaults.standard.isFirstLaunched() {
-            window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "OnboardingPage") as! OnboardingPage
+            window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "ContainerVC") as! ContainerVC
         } else {
             window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "TabViewController1") as! TabViewController1
         }

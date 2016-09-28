@@ -11,8 +11,8 @@ import Foundation
 extension UserDefaults {
     func isFirstLaunched() -> Bool {
         
-        if !(UserDefaults.standard.bool(forKey: "firstLaunched3")) {
-            UserDefaults.standard.set(true, forKey: "firstLaunched3")
+        if !(UserDefaults.standard.bool(forKey: "firstLaunched9")) {
+            UserDefaults.standard.set(true, forKey: "firstLaunched9")
             UserDefaults.standard.synchronize()
             print("first Launched")
             return true
